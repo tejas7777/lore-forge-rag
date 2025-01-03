@@ -1,0 +1,26 @@
+{
+  "name": "documaster",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/amqplib": "^0.10.6",
+    "@types/formidable": "^3.4.5",
+    "@types/mongodb": "^4.0.7",
+    "amqplib": "^0.10.5",
+    "formidable": "^3.5.2",
+    "http": "^0.0.1-security",
+    "mongodb": "^6.12.0",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.3"
+  }
+}
