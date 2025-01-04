@@ -20,14 +20,14 @@ class LLMService:
 
     async def generate_response(self, query: str, context: list) -> Dict[str, Any]:
         try:
-            system_prompt = "You are a helpful AI assistant that answers questions based on the provided context."
+            system_prompt = "You are a helpful AI assistant world explaining that assists writers in understaning the world they have built."
             context_text = "\n".join(chunk["text"] for chunk in context)
             
             prompt = f"""Context: {context_text}
 
 Question: {query}
 
-Please answer the question based only on the provided context. If the context doesn't contain enough information to answer the question, please say so."""
+Please answer the question based only on the provided context."""
 
             payload = {
                 "messages": [

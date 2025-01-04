@@ -1,7 +1,7 @@
-# LoreForge 🧙‍♂️  (Monorepo)
-**A System for World-Building and Storytelling with Retrieval-Augmented Generation (RAG)**
+# LoreForge 🧙‍♂️
+**A System to assist in custom World-Building and Storytelling with Retrieval-Augmented Generation (RAG)**
 
-LoreForge is a backend system designed to help writers expand their world-building and storytelling. It uses **Retrieval-Augmented Generation (RAG)** to retrieve and organize existing world-building content, construct context-aware prompts, and generate responses to assist in narrative development. Built with a **distributed and scalable architecture**, it handles updates and content generation efficiently, allowing writers to focus on creativity while the system manages the complexity of maintaining and expanding their worlds.
+LoreForge is a backend system designed to help writers expand their world-building and storytelling. It uses **Retrieval-Augmented Generation (RAG)** to retrieve and organize existing world-building content, construct context-aware prompts, and generate responses to assist in narrative development. Built with a **distributed and scalable architecture**, it handles updates and content generation efficiently, **allowing writers to focus on creativity while the system manages the complexity of maintaining and expanding their worlds**.
 
 ## Components
 - **documaster** : Service to handle document (worldbuilding text) ingestion, archival and updation.
