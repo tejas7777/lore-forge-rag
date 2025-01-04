@@ -29,11 +29,11 @@ LoreForge is a backend system designed to help writers expand their world-buildi
 ---
 
 ## Tech Stack 💻
-- **Backend**: Node.js, TypeScript, Python
+- **Backend Servers**: Nodejs, TypeScript, Python, FastAPI
 - **Database**: MongoDB (for metadata management)
 - **Search**: Vector-based retrieval for relevant content (Elasticsearch)
 - **Task Queue**: RabbitMQ (for asynchronous task processing)
-- **LLM Integration**: LocalLLama
-- **Other Tools**: npm, Git, Elasticsearch (optional for advanced search)
+- **LLM Integration**: LocalLLama (configurabel to use any LLaMA model)
+- **Other Tools**: npm, Git, Elasticsearch, Docker
 
 ---
