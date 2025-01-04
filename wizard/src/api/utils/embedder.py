@@ -1,4 +1,4 @@
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, CrossEncoder
 from src.api.config import settings
 from src.api.utils.logger import get_logger_service
 from src.api.config import settings
@@ -9,7 +9,13 @@ logger = get_logger_service()
 
 def get_embedding_service():
     if not hasattr(get_embedding_service, "instance"):
-        get_embedding_service.instance = EmbeddingService()
+            get_embedding_service.instance = EmbeddingService()
+    return get_embedding_service.instance
+
+
+def get_cross_encoder():
+    if not hasattr(get_cross_encoder, "instance"):
+         get_embedding_service.instance = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
     return get_embedding_service.instance
 
 class EmbeddingService:

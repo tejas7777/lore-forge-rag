@@ -20,26 +20,32 @@ class LLMService:
 
     async def generate_response(self, query: str, context: list) -> Dict[str, Any]:
         try:
-            system_prompt = "You are a helpful AI assistant world explaining that assists writers in understaning the world they have built."
             context_text = "\n".join(chunk["text"] for chunk in context)
-            
-            prompt = f"""Context: {context_text}
+            system_prompt = """You are a narrative context analyzer focused on maintaining consistency and authenticity. You must:
+            - Use only information from provided context
+            - Preserve established themes and internal logic
+            - Reference specific elements and locations
+            - Acknowledge limitations in given information
+            - Avoid fabricating details"""
 
-Question: {query}
+            prompt = f"""Based on the provided material, generate a response that:
+            1. Integrates established elements and locations
+            2. References existing systems and hierarchies
+            3. Acknowledges consequences and limitations
+            4. Uses source-specific terminology
+            5. Maintains the material's tone
 
-Please answer the question based only on the provided context."""
+            Context: {context_text}
+            Question: {query}"""
 
             payload = {
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": prompt}
-                ],
-                "temperature": 0.7,
-                "max_tokens": 512,
-                "stream": False
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
+            ],
+            "temperature": 0.3,
+            "max_tokens": 512
             }
-
-            logger.info("[llm][generate] Sending request to LLM")
             
             async with httpx.AsyncClient() as client:
                 response = await client.post(
