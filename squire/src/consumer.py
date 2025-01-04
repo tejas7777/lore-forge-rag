@@ -7,9 +7,6 @@ from bson.objectid import ObjectId
 import pymongo
 from src.embeddings.SentenceEmbedder import SentenceEmbedder
 
-
-
-
 class Consumer:
    def __init__(self):
        self.processor = None
